@@ -1,0 +1,132 @@
+.App{
+  /* remember to delete padding if you want edge to edge  */
+  padding: 2px;
+  ;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr ;
+  grid-template-rows: 80px 4fr 1fr;
+}
+
+.Nav {
+  padding: 20px;
+  background-color: rgb(47, 47, 174);
+
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  display: flex;
+  justify-content: right;
+  color: white;
+}
+
+.liDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.li {
+  text-decoration: none;
+  color: WHite;
+  margin-left: 20px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.li:hover {
+  text-decoration: underline;
+}
+
+.LogInOut {
+  margin-left: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LogInOut:hover{
+  cursor: pointer;
+}
+
+.Landing {
+  padding: 20px;
+  grid-column: 2;
+  grid-row: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Profile {
+  padding: 20px;
+  grid-column: 2;
+  grid-row: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Ballot{
+  padding: 20px;
+  grid-column: 2;
+  grid-row: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.displayFormBallot{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 400px;
+}
+
+.displayFormInputD{
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.Foot {
+  padding: 20px;
+  margin-top: 20px;
+  background-color:rgba(128, 128, 128, 0.381);
+
+  grid-column: 1 / span 3;
+  grid-row: 3;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userForm {
+  grid-column: 1/ span 3;
+  grid-row: 1/ span 3;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayForm{
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+.displayFormInput{
+  margin-bottom: 20px;
+}
+.toSignUp{
+  font-size: 10px;
+}
+.toSignUp:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
