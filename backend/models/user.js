@@ -13,8 +13,8 @@ const User = new Schema(
     password: { type: String, required: true },
     description: { type: String, required: false },
     image: { type: String, required: false },
-    ticketsCreated: [{ type: Schema.Types.ObjectId, ref: 'tickets' }],
-    votesCreated: [{ type: Schema.Types.ObjectId, ref: 'tickets' }]
+    ticketsCreated: [{ type: Schema.Types.ObjectId, ref: 'ticket' }],
+    votesCreated: [{ type: Schema.Types.ObjectId, ref: 'vote' }]
   },
   { timestamps: true }
 );

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const User = require('./user');
 const Schema = mongoose.Schema;
 
 const Ticket = new Schema(
@@ -6,9 +7,10 @@ const Ticket = new Schema(
     title: { type: String, required: true },
     contract: { type: String, required: true },
     description: { type: String, required: true },
-    totalVotes: { type: Number, required: true },
-    positiveVotes: { type: Number, required: true },
-    negativeVotes: { type: Number, required: true }
+    totalVotes: { type: Number, required: false },
+    positiveVotes: { type: Number, required: false },
+    negativeVotes: { type: Number, required: false },
+    user: [{ type: Schema.Types.ObjectId, ref: 'user' }]
   },
   { timestamps: true }
 );

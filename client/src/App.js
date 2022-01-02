@@ -25,8 +25,18 @@ function App() {
       <Nav userStatus={userStatus} setUserStatus={setUserStatus} />
       <Switch>
         <Route exact path="/" render={Landing} />
-        <Route exact path="/profile" exact render={() => <Profile />} />
-        <Route exact path="/ballot" exact render={() => <Ballot />} />
+        <Route
+          exact
+          path="/profile"
+          exact
+          render={() => <Profile userStatus={userStatus} />}
+        />
+        <Route
+          exact
+          path="/ballot"
+          exact
+          render={() => <Ballot userStatus={userStatus} />}
+        />
       </Switch>
       <Foot />
       {!userStatus.userForm ? null : (
