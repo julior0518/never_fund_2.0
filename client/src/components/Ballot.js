@@ -22,6 +22,16 @@ function Ballot(params) {
   async function createBallot(e) {
     e.preventDefault();
     await axios.post(`${BASE_URL}/tickets`, ballotCreate);
+    document.getElementById('title').value = '';
+    document.getElementById('contract').value = '';
+    document.getElementById('description').value = '';
+    alert(
+      'A new ballot has been created. Check your profile to update or edit your offer.'
+    );
+  }
+
+  if (params.userStatus.userID === '') {
+    window.location = 'http://localhost:3000';
   }
 
   return (
