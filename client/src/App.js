@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Route, Switch } from 'react-router-dom';
 
 import Nav from './components/Nav';
@@ -28,13 +27,11 @@ function App() {
         <Route
           exact
           path="/profile"
-          exact
           render={() => <Profile userStatus={userStatus} />}
         />
         <Route
           exact
           path="/ballot"
-          exact
           render={() => <Ballot userStatus={userStatus} />}
         />
       </Switch>

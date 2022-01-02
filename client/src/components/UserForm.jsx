@@ -6,7 +6,9 @@ function UserForm(props) {
   const [formType, setFormType] = useState({
     type: "login",
     userCheck: "",
-    userCheckID: ""
+    userCheckID: "",
+    ///// will literally print the password when searching for user... ther has to be a better way
+    userPasswordCheck: ""
   })
   const [user, setUser] = useState ({
     nameUser: "",
@@ -15,7 +17,7 @@ function UserForm(props) {
   })
   useEffect(()=>{async function userCheck () {
     const res = await axios.get(`${BASE_URL}/user/${user.nameUser}`)
-    setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser, userCheckID: res.data.esteUsername[0]._id})
+    setFormType({...formType, userCheck:res.data.esteUsername[0].nameUser, userCheckID: res.data.esteUsername[0]._id, userPasswordCheck: res.data.esteUsername[0].password})
   }
   userCheck()
 },[user])
@@ -24,11 +26,13 @@ const form = useRef()
 
   function handleChange (e){
     setUser({...user, [e.target.id]: e.target.value})
+
   }
 
+  console.log(formType.userPasswordCheck)
 
   function login(){
-    if ((user.password !== "") && (formType.userCheck === user.nameUser)){
+    if ((formType.userCheck === user.nameUser)&&(formType.userPasswordCheck === user.password)){
       props.setUserStatus({...props.userStatus , userForm:false, loginStatus:true, userID:formType.userCheckID})
     } else {
       alert("Username or password does not match any user in the database. Please check your info or create a new account")
