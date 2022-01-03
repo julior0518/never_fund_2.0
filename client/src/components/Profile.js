@@ -8,25 +8,33 @@ const Profile = (params) => {
   const [reRender, setReRender] = useState({
     run: false
   });
+  const [me, setMe] = useState();
 
   useEffect(() => {
     async function allBallots() {
       const res = await axios.get(`${BASE_URL}/tickets`);
       setListBallots(res.data.todosLosTickets);
-      console.log(';OL');
     }
     allBallots();
   }, [reRender]);
+
+  useEffect(() => {
+    async function who() {
+      const res = await axios.get(
+        `${BASE_URL}/users/${params.userStatus.userID}`
+      );
+      setMe(res.data.esteUserId.nameUser);
+    }
+    who();
+  }, []);
 
   if (params.userStatus.userID === '') {
     window.location = 'http://localhost:3000';
   }
 
-  console.log(listBallots);
-
   return (
     <div className="Profile">
-      <p>Profile</p>
+      <p>Username: {me}</p>
       <div className="listTicket">
         {listBallots.map((ticket) => {
           if (ticket.user[0] === params.userStatus.userID) {
