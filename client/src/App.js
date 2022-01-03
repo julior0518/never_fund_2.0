@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Foot from './components/Foot';
 import UserForm from './components/UserForm';
 import Ballot from './components/Ballot';
+import Explore from './components/Explore';
 
 import './App.css';
 
@@ -33,6 +34,11 @@ function App() {
           exact
           path="/ballot"
           render={() => <Ballot userStatus={userStatus} />}
+        />
+        <Route
+          exact
+          path="/explore"
+          render={() => <Explore userStatus={userStatus} />}
         />
       </Switch>
       <Foot />

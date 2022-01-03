@@ -15,11 +15,14 @@ function Nav(props) {
         <Link to="/" className="li">
           Home
         </Link>
+        <Link to="/explore" className="li">
+          Explore
+        </Link>
         <Link to="/profile" className="li">
           Profile
         </Link>
         <Link to="/ballot" className="li">
-          Ballot
+          Add
         </Link>
       </div>
     );

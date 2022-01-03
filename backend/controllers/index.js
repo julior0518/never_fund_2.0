@@ -1,16 +1,5 @@
-const { Taco, User, Ticket, Vote } = require('../models');
+const { User, Ticket, Vote } = require('../models');
 
-const createTaco = async (req, res) => {
-  try {
-    const esteTaco = await new Taco(req.body);
-    await esteTaco.save();
-    return res.status(201).json({
-      esteTaco
-    });
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-};
 const createUser = async (req, res) => {
   try {
     const esteUser = await new User(req.body);
@@ -46,14 +35,6 @@ const createVote = async (req, res) => {
 };
 ///////////////////// create data
 
-const getAllTacos = async (req, res) => {
-  try {
-    const todosLosTacos = await Taco.find();
-    return res.status(200).json({ todosLosTacos });
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
-};
 const getAllUsers = async (req, res) => {
   try {
     const todosLosUsers = await User.find();
@@ -79,18 +60,6 @@ const getAllVotes = async (req, res) => {
   }
 };
 
-const getTacosById = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const esteTacoId = await Taco.findById(id);
-    if (esteTacoId) {
-      return res.status(200).json({ esteTacoId });
-    }
-    return res.status(404).send('This ID is not real');
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
-};
 const getUserById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -142,22 +111,7 @@ const getUserByUsername = async (req, res) => {
 };
 
 //////////////////get data
-const updateTaco = async (req, res) => {
-  try {
-    const { id } = req.params;
-    Taco.findByIdAndUpdate(id, req.body, { new: true }, (err, user) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-      if (!user) {
-        res.status(500).send('not found!');
-      }
-      return res.status(200).json(user);
-    });
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
-};
+
 const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -208,18 +162,7 @@ const updateVote = async (req, res) => {
   }
 };
 ///////// update data
-const deleteTaco = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const deleted = await Taco.findByIdAndDelete(id);
-    if (deleted) {
-      return res.status(200).send('deleted');
-    }
-    throw new Error('not found');
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
-};
+
 const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -259,23 +202,18 @@ const deleteVote = async (req, res) => {
 /////////// delete data
 
 module.exports = {
-  createTaco,
   createTicket,
   createUser,
   createVote,
-  getAllTacos,
   getAllTickets,
   getAllUsers,
   getAllVotes,
-  getTacosById,
   getUserById,
   getVoteById,
   getTicketById,
-  updateTaco,
   updateUser,
   updateVote,
   updateTicket,
-  deleteTaco,
   deleteUser,
   deleteVote,
   deleteTicket,

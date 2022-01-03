@@ -36,8 +36,8 @@ const Profile = (params) => {
     <div className="Profile">
       <h2>Username: {me}</h2>
       <p>
-        Bellow is a list of the ballots created and how many users are in favor
-        or against
+        Bellow is a list of the ballots you created and how many users are in
+        favor or against the offer.
       </p>
       <div className="listTicket">
         {listBallots.map((ticket) => {
