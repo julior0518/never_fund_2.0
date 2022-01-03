@@ -5,14 +5,18 @@ import Ticket from './Ticket';
 
 const Profile = (params) => {
   const [listBallots, setListBallots] = useState([]);
+  const [reRender, setReRender] = useState({
+    run: false
+  });
 
   useEffect(() => {
     async function allBallots() {
       const res = await axios.get(`${BASE_URL}/tickets`);
       setListBallots(res.data.todosLosTickets);
+      console.log(';OL');
     }
     allBallots();
-  }, []);
+  }, [reRender]);
 
   if (params.userStatus.userID === '') {
     window.location = 'http://localhost:3000';
@@ -34,6 +38,9 @@ const Profile = (params) => {
                   description={ticket.description}
                   positiveVotes={ticket.positiveVotes}
                   negativeVotes={ticket.negativeVotes}
+                  ID={ticket._id}
+                  setReRender={setReRender}
+                  reRender={reRender}
                 />
               </ul>
             );
