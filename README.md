@@ -4,6 +4,14 @@
 
 #### [Github (Julio)](https://github.com/julior0518)
 
+> [Trello](https://trello.com/b/ex6KDbhR/never-fund)
+
+> [git1](https://github.com/julior0518/never_fund)
+
+> [git2](https://github.com/julior0518/never_fund_2.0)
+
+> [lucidChart](https://lucid.app/lucidchart/6e87e0f8-bd51-4e9e-8c0b-101eba8143fb/edit?beaconFlowId=37A85357346BAFF3&invitationId=inv_f93fa208-94bf-4a19-b498-da2619a2d960&page=0_0#)
+
 ***
 #### previous work happened in never_fund version 1 until we ran into an issue regarding react being installed twice resulting in useState and useEffect crashing the app. AS a solution 2.0 project was created, but this did not solve the problem. It turned out it was a rendering issue.
 
@@ -28,14 +36,6 @@
 * GitHub
 * Etherscan API
 
-### ***Getting Started***
-> [Trello](https://trello.com/b/ex6KDbhR/never-fund)
-
-> [git1](https://github.com/julior0518/never_fund)
-
-> [git2](https://github.com/julior0518/never_fund_2.0)
-
-> [lucidChart](https://lucid.app/lucidchart/6e87e0f8-bd51-4e9e-8c0b-101eba8143fb/edit?beaconFlowId=37A85357346BAFF3&invitationId=inv_f93fa208-94bf-4a19-b498-da2619a2d960&page=0_0#)
 
 
 ## For testing please create a user, add 1 or 2 tickets/ballots on the add tab, and check them out on your profile or in explore. If you create multiple users all ballots will be viewable from the Explore tab, but only the ones from current user will be able to be deleted in the profile tab.
@@ -68,8 +68,8 @@ As a prove of concept we will need:
 - [] Heroku Deployment
 
 
-![Landing_Page](https://imgur.com/9u9VHfO)
-![Add_Page](https://imgur.com/BbUH96z)
+![Landing_Page](https://i.imgur.com/9u9VHfO.jpg)
+![Add_Page](https://i.imgur.com/BbUH96z.jpg)
 
 
 
