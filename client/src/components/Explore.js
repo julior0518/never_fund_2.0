@@ -23,9 +23,10 @@ const Explore = (params) => {
 
   return (
     <div className="Explore">
+      <h1>Vote on other users ballots</h1>
       <p>
-        Bellow is a list of the ballots created and how many users are in favor
-        or against
+        Explore users interest and let them know if you agree with the purchase
+        they want to make
       </p>
       <div className="listTicketX">
         {listBallots.map((ticket) => {

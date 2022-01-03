@@ -1,6 +1,6 @@
 const db = require('../db');
 const { User } = require('../models/index');
-
+const { Ticket } = require('../models/ticket');
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
@@ -22,7 +22,7 @@ const mainSeed = async () => {
   ];
 
   await User.insertMany(users);
-  console.log('Created some banging tacos!');
+  console.log('Created some banging data!');
 };
 const run = async () => {
   await mainSeed();

@@ -13,12 +13,18 @@ function Ticket (props){
   async function yeahBuddy(e){
     const res = await axios.get(`${BASE_URL}/tickets/${props.ID}`)
     let yeses = res.data.esteTicketId.positiveVotes
-    let newyes = yeses +1
+    let newyes = yeses + 1
     await axios.put(`${BASE_URL}/tickets/${props.ID}`, {positiveVotes: newyes})
     props.setReRender({...props.reRender, run: true})
   }
 
-  function nopers(e){}
+  async function nopers(e){
+    const res = await axios.get(`${BASE_URL}/tickets/${props.ID}`)
+    let noNo = res.data.esteTicketId.negativeVotes
+    let newno = noNo + 1
+    await axios.put(`${BASE_URL}/tickets/${props.ID}`, {negativeVotes: newno})
+    props.setReRender({...props.reRender, run: true})
+  }
 
 
 
