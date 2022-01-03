@@ -64,9 +64,19 @@
   grid-column: 2;
   grid-row: 2;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  background-color: aqua;
+}
+
+.listTicket{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ticketDisplay {
+  padding: 5px 10px 5px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.3); 
+  border-radius: 25px
 }
 
 .Ballot{
@@ -130,3 +140,4 @@
   cursor: pointer;
   text-decoration: underline;
 }
+

@@ -9,7 +9,9 @@ function Ballot(params) {
     title: '',
     contract: '',
     description: '',
-    user: ''
+    user: '',
+    positiveVotes: 0,
+    negativeVotes: 0
   });
   function handleChange(e) {
     setBallotCreate({

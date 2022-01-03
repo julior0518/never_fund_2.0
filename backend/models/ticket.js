@@ -7,7 +7,6 @@ const Ticket = new Schema(
     title: { type: String, required: true },
     contract: { type: String, required: true },
     description: { type: String, required: true },
-    totalVotes: { type: Number, required: false },
     positiveVotes: { type: Number, required: false },
     negativeVotes: { type: Number, required: false },
     user: [{ type: Schema.Types.ObjectId, ref: 'user' }]
