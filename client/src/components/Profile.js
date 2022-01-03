@@ -34,7 +34,11 @@ const Profile = (params) => {
 
   return (
     <div className="Profile">
-      <p>Username: {me}</p>
+      <h2>Username: {me}</h2>
+      <p>
+        Bellow is a list of the ballots created and how many users are in favor
+        or against
+      </p>
       <div className="listTicket">
         {listBallots.map((ticket) => {
           if (ticket.user[0] === params.userStatus.userID) {
